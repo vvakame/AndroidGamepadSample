@@ -47,7 +47,7 @@ public class JoystickUtils {
 		Log.d(depth - 1, "motion range info------ " + range.toString());
 
 		Log.d(depth, "axis=" + MotionEvent.axisToString(range.getAxis()));
-		Log.d(depth, "source=" + range.getSource()); // Ç«Ç§ÇµÇÊÇ§Ç©Ç»
+		Log.d(depth, "source=" + range.getSource()); // „Å©„ÅÜ„Åó„Çà„ÅÜ„Åã„Å™
 		Log.d(depth, "flat=" + range.getFlat());
 		Log.d(depth, "fuzz=" + range.getFuzz());
 		Log.d(depth, "max=" + range.getMax());
@@ -58,10 +58,7 @@ public class JoystickUtils {
 	static void dumpInputDevice(InputDevice device) {
 		final int depth = 3;
 
-		Log.d(depth - 1, "input device info------ " /*
-													 * + device.toString()
-													 * 1çsÇ∂Ç·Ç»Ç¢ÇÃÇ≈
-													 */);
+		Log.d(depth - 1, "input device info------ ");
 		if (device == null) {
 			Log.d(depth, "input device is null...");
 			return;
@@ -72,7 +69,7 @@ public class JoystickUtils {
 				"keyboardType="
 						+ convDevice("KEYBOARD_TYPE", device.getKeyboardType()));
 		Log.d(depth, "name=" + device.getName());
-		Log.d(depth, "sources=" + device.getSources()); // ì‰ÇÃíl
+		Log.d(depth, "sources=" + device.getSources()); // Ë¨é„ÅÆÂÄ§
 
 		for (MotionRange range : device.getMotionRanges()) {
 			dumpMotionRange(range);
@@ -85,8 +82,8 @@ public class JoystickUtils {
 		Log.d(depth - 1, "input event info------ " + event.toString());
 
 		Log.d(depth, "deviceId=" + event.getDeviceId());
-		Log.d(depth, "source=" + convDevice("SOURCE_", event.getSource())); // convDevice
-																			// Ç≈ê≥ÇµÇ¢
+		// convDevice „ÅßÊ≠£„Åó„ÅÑ
+		Log.d(depth, "source=" + convDevice("SOURCE_", event.getSource()));
 
 		dumpInputDevice(event.getDevice());
 	}
@@ -101,11 +98,11 @@ public class JoystickUtils {
 
 		dumpInputEvent(event);
 
-		Log.d(depth, "action=" // TODO Ç±ÇÃÇ‹Ç‹Ç∂Ç·É_ÉÅÇªÇ§
+		Log.d(depth, "action="
 				+ convMotionEvent("ACTION_", event.getDeviceId()));
 
-		Log.d(depth, "actionIndex=" + event.getActionIndex()); // ì‰
-		Log.d(depth, "actionMasked=" + event.getActionMasked()); // ì‰
+		Log.d(depth, "actionIndex=" + event.getActionIndex()); // Ë¨é
+		Log.d(depth, "actionMasked=" + event.getActionMasked()); // Ë¨é
 
 		Log.d(depth, "downTime=" + event.getDownTime());
 		Log.d(depth, "eventTime=" + event.getEventTime());
@@ -114,7 +111,8 @@ public class JoystickUtils {
 				"edgeFlags=" + convMotionEvent("EDGE_", event.getEdgeFlags()));
 		Log.d(depth, "flags=" + convMotionEvent("FLAG_", event.getFlags()));
 
-		Log.d(depth, "metaState=" + convKeyEvent("META_", event.getMetaState())); // convKeyEventÇ≈ê≥ÇµÇ¢
+		// convKeyEvent„ÅßÊ≠£„Åó„ÅÑ
+		Log.d(depth, "metaState=" + convKeyEvent("META_", event.getMetaState()));
 
 		Log.d(depth, "rawX=" + event.getRawX());
 		Log.d(depth, "rawY=" + event.getRawY());
@@ -140,7 +138,7 @@ public class JoystickUtils {
 			Log.d(depth, "x p" + p + "=" + event.getX(p));
 			Log.d(depth, "y p" + p + "=" + event.getY(p));
 
-			// event.getPointerCoords(p, null); Ç¢ÇÁÇÒÇ©Ç»
+			// event.getPointerCoords(p, null); „ÅÑ„Çâ„Çì„Åã„Å™
 		}
 
 		for (int h = 0; h < event.getHistorySize(); h++) {
@@ -198,10 +196,9 @@ public class JoystickUtils {
 
 		dumpInputEvent(event);
 
-		// Ç‹Å[KeyEventÇÕé·ä±ìKìñÅc
+		// „Åæ„ÉºKeyEvent„ÅØËã•Âπ≤ÈÅ©ÂΩì‚Ä¶
 
-		Log.d(depth, "action=" // TODO Ç±ÇÃÇ‹Ç‹Ç∂Ç·É_ÉÅÇªÇ§
-				+ convMotionEvent("ACTION_", event.getDeviceId()));
+		Log.d(depth, "action=" + convKeyEvent("ACTION_", event.getAction()));
 
 		Log.d(depth, "downTime=" + event.getDownTime());
 		Log.d(depth, "eventTime=" + event.getEventTime());
@@ -220,57 +217,6 @@ public class JoystickUtils {
 		Log.d(depth, "repeatCount=" + event.getRepeatCount());
 
 		Log.setLogger(oldLogger);
-	}
-
-	// for InputDevice
-
-	public static String toId(InputDevice device) {
-		return String.valueOf(device.getId());
-	}
-
-	public static String toHoge(InputDevice device) {
-		device.getId();
-		device.getKeyboardType();
-		device.getMotionRanges();
-		device.getName();
-		device.getSources();
-		device.getMotionRange(0);
-
-		return null;
-	}
-
-	// for InputEvent
-
-	public static String toHoge(InputEvent event) {
-		event.getSource();
-		event.getDeviceId();
-		event.getDevice();
-
-		return null;
-	}
-
-	// for MotionEvent
-
-	public static String toHoge(MotionEvent event) {
-		event.getAction();
-		event.getActionIndex();
-		event.getActionMasked();
-		event.getDownTime();
-		event.getEdgeFlags();
-		event.getEventTime();
-		event.getFlags();
-		event.getHistorySize();
-		event.getMetaState();
-		event.getOrientation();
-
-		return null;
-	}
-
-	// for KeyEvent
-
-	public static String toHoge(KeyEvent event) {
-
-		return null;
 	}
 
 	static String convDevice(String prefix, int val) {

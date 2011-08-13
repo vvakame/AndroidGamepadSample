@@ -17,9 +17,9 @@ public class Utils {
 	}
 
 	/**
-	 * ŒÄ‚Ño‚µŒ³‚ÌƒNƒ‰ƒX–¼‚Æƒƒ\ƒbƒh–¼As”Ô†‚ğæ“¾‚µ•Ô‚µ‚Ü‚·.
+	 * å‘¼ã³å‡ºã—å…ƒã®ã‚¯ãƒ©ã‚¹åã¨ãƒ¡ã‚½ãƒƒãƒ‰åã€è¡Œç•ªå·ã‚’å–å¾—ã—è¿”ã—ã¾ã™.
 	 * 
-	 * @return ƒNƒ‰ƒX–¼#ƒƒ\ƒbƒh–¼/Ls”Ô†
+	 * @return ã‚¯ãƒ©ã‚¹å#ãƒ¡ã‚½ãƒƒãƒ‰å/Lè¡Œç•ªå·
 	 */
 	public static String whereIsHere() {
 		StackTraceElement[] stacks = Thread.currentThread().getStackTrace();
