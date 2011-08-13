@@ -8,6 +8,7 @@ import java.util.Map;
 
 import net.vvakame.gamepadsample.log.Log;
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.InputDevice;
 import android.view.InputDevice.MotionRange;
@@ -17,17 +18,28 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 public class InputFragment extends Fragment implements OnMotionCapture {
 
 	Map<Integer, TextView> textViewMap = new HashMap<Integer, TextView>();
 	View rootView;
+	TableLayout tableLayout;
+
+	int baseViewCount;
+	InputDevice recentlyDevise;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		rootView = inflater.inflate(R.layout.input, container, false);
+
+		tableLayout = (TableLayout) rootView.findViewById(R.id.table);
+
+		baseViewCount = tableLayout.getChildCount();
+
 		return rootView;
 	}
 
@@ -85,18 +97,14 @@ public class InputFragment extends Fragment implements OnMotionCapture {
 					event.getX(p), event.getY(p)));
 		}
 
-		float rawX = event.getRawX();
-		float rawY = event.getRawY();
-		float x = event.getX();
-		float y = event.getY();
-		float axisHatX = event.getAxisValue(MotionEvent.AXIS_HAT_X);
-		float axisHatY = event.getAxisValue(MotionEvent.AXIS_HAT_Y);
-		float axisLTrigger = event.getAxisValue(MotionEvent.AXIS_LTRIGGER);
-		float axisRTrigger = event.getAxisValue(MotionEvent.AXIS_RTRIGGER);
-		float axisRZ = event.getAxisValue(MotionEvent.AXIS_RZ);
-		float axisX = event.getAxisValue(MotionEvent.AXIS_X);
-		float axisY = event.getAxisValue(MotionEvent.AXIS_Y);
-		float axisZ = event.getAxisValue(MotionEvent.AXIS_Z);
+		setText(R.id.history_size, historySize);
+		setText(R.id.raw_x, event.getRawX());
+		setText(R.id.raw_y, event.getRawY());
+		setText(R.id.x, event.getX());
+		setText(R.id.y, event.getY());
+
+		InputDevice device = event.getDevice();
+		setAxisValues(event, device);
 
 		float axisGeneric1 = event.getAxisValue(MotionEvent.AXIS_GENERIC_1);
 		float axisGeneric2 = event.getAxisValue(MotionEvent.AXIS_GENERIC_2);
@@ -135,20 +143,6 @@ public class InputFragment extends Fragment implements OnMotionCapture {
 		builder.append(axisGeneric16);
 
 		Log.d(builder.toString());
-
-		setText(R.id.history_size, historySize);
-		setText(R.id.raw_x, rawX);
-		setText(R.id.raw_y, rawY);
-		setText(R.id.x, x);
-		setText(R.id.y, y);
-		setText(R.id.axis_l_trigger, axisLTrigger);
-		setText(R.id.axis_r_trigger, axisRTrigger);
-		setText(R.id.axis_hat_x, axisHatX);
-		setText(R.id.axis_hat_y, axisHatY);
-		setText(R.id.axis_rz, axisRZ);
-		setText(R.id.axis_x, axisX);
-		setText(R.id.axis_y, axisY);
-		setText(R.id.axis_z, axisZ);
 	}
 
 	@Override
@@ -176,5 +170,61 @@ public class InputFragment extends Fragment implements OnMotionCapture {
 			textViewMap.put(resId, (TextView) rootView.findViewById(resId));
 		}
 		textViewMap.get(resId).setText(String.valueOf(text));
+	}
+
+	void setAxisValues(MotionEvent event, InputDevice device) {
+		if (device == null) {
+			removeAxisViewes();
+			return;
+		} else if (recentlyDevise == null
+				|| device.getId() != recentlyDevise.getId()) {
+			addAxisViewes(device);
+			recentlyDevise = device;
+			Log.d("device changed.");
+		}
+		setAxisValuesToTextView(event, device);
+	}
+
+	void removeAxisViewes() {
+		while (baseViewCount < tableLayout.getChildCount()) {
+			tableLayout.removeViewAt(baseViewCount);
+		}
+	}
+
+	void addAxisViewes(InputDevice device) {
+		removeAxisViewes();
+
+		final Context context = getActivity();
+
+		List<String> axisNames = JoystickUtils.getAxisNames(device);
+		Collections.sort(axisNames);
+		for (String axisName : axisNames) {
+			TableRow row = new TableRow(context);
+			TextView text;
+			{
+				text = new TextView(context);
+				text.setText(axisName);
+				row.addView(text);
+			}
+			{
+				text = new TextView(context);
+				text.setTag(axisName);
+				row.addView(text);
+			}
+			tableLayout.addView(row);
+		}
+	}
+
+	void setAxisValuesToTextView(MotionEvent event, InputDevice device) {
+		if (device == null) {
+			return;
+		}
+
+		List<MotionRange> motionRanges = device.getMotionRanges();
+		for (MotionRange range : motionRanges) {
+			String axisName = MotionEvent.axisToString(range.getAxis());
+			TextView textView = (TextView) rootView.findViewWithTag(axisName);
+			textView.setText(String.valueOf(event.getAxisValue(range.getAxis())));
+		}
 	}
 }

@@ -27,6 +27,20 @@ public class JoystickUtils {
 		return axisList;
 	}
 
+	public static List<String> getAxisNames(InputDevice device) {
+		List<String> axisNames = new ArrayList<String>();
+		if (device == null) {
+			return axisNames;
+		}
+
+		List<MotionRange> motionRanges = device.getMotionRanges();
+		for (MotionRange range : motionRanges) {
+			axisNames.add(MotionEvent.axisToString(range.getAxis()));
+		}
+
+		return axisNames;
+	}
+
 	static void dumpMotionRange(MotionRange range) {
 		final int depth = 4;
 

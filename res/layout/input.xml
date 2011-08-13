@@ -3,97 +3,106 @@
 	android:orientation="horizontal" android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
-	<TableLayout android:layout_height="match_parent" android:layout_width="wrap_content" android:id="@+id/table">
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/device_name" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/device_name" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+	<TableLayout android:layout_height="match_parent"
+		android:layout_width="wrap_content" android:id="@+id/table">
+		<TableRow android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:text="@string/device_name"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<TextView android:id="@+id/device_name"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
 		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/support_axis" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/support_axis" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<TableRow android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:text="@string/support_axis"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<TextView android:id="@+id/support_axis"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
 		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/event_type" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/event_type" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<TableRow android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:text="@string/event_type"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<TextView android:id="@+id/event_type" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
 		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/source" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/source" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<TableRow android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:text="@string/source"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<TextView android:id="@+id/source" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
 		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/id" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/id" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<TableRow android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:text="@string/id" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<TextView android:id="@+id/id" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
 		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/motion_range_size" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/motion_range_size" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<TableRow android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:text="@string/motion_range_size"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<TextView android:id="@+id/motion_range_size"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
 		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/history_size" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/history_size" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<TableRow android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:text="@string/history_size"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<TextView android:id="@+id/history_size"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
 		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/key_code" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/key_code" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<TableRow android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:text="@string/key_code"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<TextView android:id="@+id/key_code" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
 		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/key_code_str" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/key_code_str" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<TableRow android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:text="@string/key_code_str"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<TextView android:id="@+id/key_code_str"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
 		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/action" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/action" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<TableRow android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:text="@string/action"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" />
+			<TextView android:id="@+id/action" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
 		</TableRow>
 
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/raw_x" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/raw_x" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<TableRow android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:text="@string/raw_x" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<TextView android:id="@+id/raw_x" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
 		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/raw_y" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/raw_y" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<TableRow android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:text="@string/raw_y" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<TextView android:id="@+id/raw_y" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
 		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/x" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/x" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<TableRow android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:text="@string/x" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<TextView android:id="@+id/x" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
 		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/y" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/y" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/axis_l_trigger" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/axis_l_trigger" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/axis_r_trigger" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/axis_r_trigger" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/axis_hat_x" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/axis_hat_x" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/axis_hat_y" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/axis_hat_y" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/axis_rz" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/axis_rz" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/axis_x" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/axis_x" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/axis_y" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/axis_y" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-		</TableRow>
-		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
-			<TextView android:text="@string/axis_z" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-			<TextView android:id="@+id/axis_z" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<TableRow android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+			<TextView android:text="@string/y" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<TextView android:id="@+id/y" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
 		</TableRow>
 	</TableLayout>
-
-
 </LinearLayout>
