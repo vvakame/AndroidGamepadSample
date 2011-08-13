@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">Joysticks and Gamepads</string>
+
+	<string name="hello">Hello World, MainActivity!</string>
+
+	<string name="input_device">Input</string>
+	<string name="log">Log</string>
+
+	<string name="device_name">device name</string>
+	<string name="support_axis">support axis</string>
+	<string name="event_type">event type</string>
+	<string name="source">source</string>
+	<string name="id">id</string>
+	<string name="motion_range_size">motion range size</string>
+	<string name="history_size">history_size</string>
+	<string name="raw_x">raw X</string>
+	<string name="raw_y">raw Y</string>
+	<string name="key_code">key code</string>
+	<string name="key_code_str">key code(string)</string>
+	<string name="action">action</string>
+	<string name="x">X</string>
+	<string name="y">Y</string>
+	<string name="axis_l_trigger">axis LeftTrigger</string>
+	<string name="axis_r_trigger">axis RightTrigger</string>
+	<string name="axis_hat_x">axis Hat X</string>
+	<string name="axis_hat_y">axis Hat Y</string>
+	<string name="axis_rz">axis RZ</string>
+	<string name="axis_x">axis X</string>
+	<string name="axis_y">axis Y</string>
+	<string name="axis_z">axis Z</string>
+
+	<string name="empty_log">ログがないよ！</string>
+
+</resources>
